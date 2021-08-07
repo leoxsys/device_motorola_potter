@@ -381,6 +381,10 @@ PRODUCT_PACKAGES += \
     sensors.tof \
     sensors.tof.vl53l0
 
+# Shims 
+PRODUCT_PACKAGES += \
+    libqsap_shims
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
