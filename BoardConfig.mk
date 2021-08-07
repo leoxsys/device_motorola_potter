@@ -253,12 +253,12 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # Shim
-TARGET_LD_SHIM_LIBS := \
-    /vendor/bin/adspd|libshim_adsp.so \
-    /vendor/lib/libjustshoot.so|libshims_camera.so \
-    /vendor/lib/hw/camera.msm8953.so|libshim_camera_hal.so \
-    /system/lib/hw/camera.msm8953.so|libshim_camera_hal.so \
-    /vendor/lib64/libmdmcutback.so|libqsap_shim.so
+#TARGET_LD_SHIM_LIBS := \
+#   /vendor/bin/adspd|libshim_adsp.so \
+#    /vendor/lib/libjustshoot.so|libshims_camera.so \
+#    /vendor/lib/hw/camera.msm8953.so|libshim_camera_hal.so \
+#    /system/lib/hw/camera.msm8953.so|libshim_camera_hal.so \
+#    /vendor/lib64/libmdmcutback.so|libqsap_shim.so
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
