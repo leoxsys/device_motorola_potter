@@ -15,6 +15,11 @@ on init
     # Setup kernel dropbox permissions so that dropboxd can utilize it
     chown root diag /sys/kernel/dropbox/event
     chown root diag /sys/kernel/dropbox/data
+ 
+    chown system system /dev/input/event1
+    chown system system /dev/input/event2
+    chown system system /dev/input/event3
+    chown system system /dev/input/event4
 
 on fs
     # use /persist as phony PDS partition
