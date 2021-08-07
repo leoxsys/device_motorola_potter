@@ -326,8 +326,8 @@ PRODUCT_COPY_FILES += \
 
 # Qualcomm
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/privapp-permissions-oem.xml:system/etc/permissions/privapp-permissions-oem.xml \
-    $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
+    $(LOCAL_PATH)/configs/privapp-permissions-oem.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-oem.xml \
+    $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/qti_whitelist.xml
 
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect
@@ -370,11 +370,12 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf \
-    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
+    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service \
     libsensorhub \
     motosh \
     sensorhub.msm8953 \
@@ -465,4 +466,3 @@ PRODUCT_VENDOR_KERNEL_HEADERS := hardware/qcom/msm8996/kernel-headers
 PRODUCT_VENDOR_MOVE_ENABLED := true
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
-
