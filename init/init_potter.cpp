@@ -88,6 +88,12 @@ void vendor_load_properties()
     sku.append(")");
     property_override("ro.product.model", sku.c_str());
 
+     // camera (treble)
+    property_override("ro.product.manufacturer", "motorola");
+    property_override("ro.build.product", "potter");
+    property_override("ro.product.device", "potter");
+    property_override("ro.product.name", "potter_retail");
+
     // rmt_storage
     std::string device = android::base::GetProperty("ro.boot.device", "");
     std::string radio = android::base::GetProperty("ro.boot.radio", "");
