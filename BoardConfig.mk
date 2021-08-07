@@ -75,7 +75,7 @@ TARGET_RECOVERY_DEVICE_MODULES := //$(DEVICE_PATH):libinit_potter
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=350M loop.max_part=16
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 2048
@@ -225,8 +225,13 @@ TARGET_USES_ALTERNATIVE_MANUAL_NETWORK_SELECT := true
 
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+#BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+#BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
+
+# Split selinux policy
+TARGET_COPY_OUT_VENDOR := vendor
+BOARD_VENDORIMAGE_PARTITION_SIZE := 665845760
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Sensor
 USE_SENSOR_MULTI_HAL := true
@@ -248,11 +253,11 @@ TARGET_ENABLE_MEDIADRM_64 := true
 
 # Shim
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/bin/adspd|libshim_adsp.so \
-    /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so \
-    /system/vendor/lib/libjustshoot.so|libjustshoot_shim.so \
-    /system/vendor/lib64/libril-qc-qmi-1.so|libcutils_shim.so \
-    /system/vendor/lib/libril-qc-qmi-1.so|libcutils_shim.so
+    /vendor/bin/adspd|libshim_adsp.so \
+    /system/lib/lib_motsensorlistener.so|libsensor.so \
+    /system/lib/libjustshoot.so|libshims_camera.so \
+    /system/lib/hw/camera.msm8953.so|libshim_camera_hal.so \
+    /vendor/lib64/libmdmcutback.so|libqsap_shim.so
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
