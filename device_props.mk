@@ -64,7 +64,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.surface_flinger.supports_background_blur=1 \
 persist.sys.sf.disable_blurs=1 \
-ro.sf.blurs_are_expensive=1
+ro.sf.blurs_are_expensive=3
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
