@@ -449,6 +449,7 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 $(foreach target, $(shell cat $(LOCAL_PATH)/vndk.txt), $(eval PRODUCT_PACKAGES += $(target).vendor))
+$(foreach target, $(shell cat $(LOCAL_PATH)/vndk.txt), $(eval PRODUCT_PACKAGES += $(target)))
 
 PRODUCT_PACKAGES += \
     vndk-sp
