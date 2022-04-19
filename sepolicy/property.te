@@ -4,3 +4,6 @@ type hw_rev_prop, property_type;
 type touch_prop, property_type;
 type diag_prop, property_type;
 type thermal_prop, property_type;
+
+# Baseband
+vendor_internal_prop(baseband_prop)

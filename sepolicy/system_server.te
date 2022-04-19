@@ -21,3 +21,6 @@ allow system_server sysfs_screen_off_gestures:file rw_file_perms;
 allow system_server vendor_file:file { getattr open read execute };
 
 allow system_server mm-qcamerad:binder call;
+
+# Baseband
+get_prop(system_server, baseband_prop)
