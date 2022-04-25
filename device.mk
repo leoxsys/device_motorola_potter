@@ -70,6 +70,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio@2.0-service \
+    android.hardware.audio@2.0-service.vendor \
     android.hardware.broadcastradio@1.0-impl \
     audio.primary.msm8953 \
     audio.a2dp.default \
@@ -378,8 +379,11 @@ PRODUCT_COPY_FILES += \
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.1.vendor \
+    android.hardware.radio@1.1 \
     android.hardware.radio.config@1.0.vendor \
+    android.hardware.radio.config@1.0 \
     android.hardware.secure_element@1.0.vendor \
+    android.hardware.secure_element@1.0 \
     librmnetctl \
     libprotobuf-cpp-full \
     libxml2 \
