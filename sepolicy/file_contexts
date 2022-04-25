@@ -101,6 +101,7 @@
 
 # RIL
 /data/misc/netmgr(/.*)?                                  u:object_r:netmgr_data_file:s0
+/(vendor|system/vendor)/bin/init\.baseband\.sh          u:object_r:init_baseband_exec:s0
 
 # Sensors
 /dev/laser                                               u:object_r:laser_device:s0
